@@ -1,0 +1,56 @@
+---
+ - hosts: devops
+   become: yes
+   vars:
+     name: kohli
+     name2: mujammil
+     packages:
+     - git
+     - apache2
+   tasks:
+   - name: create directory
+     file: name=kohli state=directory
+     notify: created directory
+     tags: ['first']
+   - name: create file
+     file: name=test.txt state=touch
+     notify: created file
+     tags: ['second']
+   - name: copy file from control to remote
+     copy: src=/root/ansible/zip.txt dest=/home/user/kohli/
+     notify: copy'd control to remote
+     tags: ['third']
+   - name: template file
+     template: src=devops.j2 dest=/home/user/kohli/
+     notify: sending template
+     tags: ['fourth']    
+   - name: template file2
+     template: src=devops2.j2 dest=/home/user/kohli/
+     notify: sending template2
+     tags: ['five']
+
+in control machine: # vi devops.j2 (j2 means- jin jar)
+                       hello {{name}}
+                       welcome to RCB
+
+                   # vi devops.j2 (j2 means- jin jar)
+                       hello {{name2 }}
+                       welcome to banglore
+
+
+
+
+*note[before run the playbook we must create zip.txt file in control machine]
+
+
+
+
+[go remote machine and check there....]
+# ls
+# pwd
+# cd /home/
+# ls
+# cd user (which is u created user-name in remote machine's)
+# ls
+# pwd
+# ls

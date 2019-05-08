@@ -1,0 +1,21 @@
+---
+ - hosts: devops
+   become: yes
+   vars:
+     name: kohli
+     name2: krishna`
+   tasks:
+   - name: create directory
+     file: name=kohli state=directory
+     notify: created directory
+     tags: ['first']
+   - name: create file
+     file: name=devops.txt state=touch
+     tags: ["second"]
+   - name: copy file from conrol to remote
+     copy: src=/root/ansible/krishna dest=/home/user/kohli/
+   - name: template file
+     template: src=devops.j2 dest=/home/user/kohli/
+   - name: template file2
+     template: src=devops2.j2 dest=/home/user/kohli/
+     tags: ['final']

@@ -1,0 +1,18 @@
+1) creating file:-
+	$ ansible -m file -a "path=/tmp/sample.txt state=touch" <remote_machine_name>
+2) deleting file:-
+	$ ansible -m file -a "path=/tmp/sample.txt state=absent" <remote_machine_name>
+3) creating directory:-
+	$ ansible -m file -a "path=/tmp/indus state=directory" <remote_machine_name>
+4) deleting directory:- 
+        $ ansible -m file -a "path=/tmp/indus state=absent" <remote_machine_name>
+5) to see up-time:-Here are the commands you can use to get the uptime. All three commands would yield you the same results.
+	$ ansible <remote_machine_name> -m command -a uptime
+	$ ansible <remote_machine_name> -m shell -a uptime 
+	$ ansible <remote_machine_name> -a uptime
+6) how to check free disk space of hosts using ansible ad hoc command:-
+	$ ansible <remote_machine_name> -a "df -h"
+	$ ansible <remote_machine_name> -a "lsblk"
+	$ ansible <remote_machine_name> -a "free -m"
+7) how to copy file
+	$ ansible -m copy -a "src=/root/ansible/zip.txt dest=/tmp" <remote_machine_name>

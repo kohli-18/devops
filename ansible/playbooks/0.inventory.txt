@@ -1,0 +1,13 @@
+[infra]
+172.31.9.11
+
+[devops]
+172.31.29.18
+
+[all:children]
+infra
+devops
+
+[devops:vars]
+ansible_ssh_user=user
+ansible_ssh_pass=krishna123

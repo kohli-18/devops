@@ -1,0 +1,15 @@
+---
+ - hosts: devops
+   become: yes
+   tasks:
+   - name: update the apt repository
+     apt: update_cache=yes
+   - name: Install git packages
+     apt: name=git state=latest
+   - name: install apache
+     apt: name=apache2 state=latest
+   - name: Install tomcat packages
+     apt: name=tomcat8 state=latest
+
+   - name: copy file from control to remote
+     copy: src=/root/ansible/index.html dest=/var/www/html/

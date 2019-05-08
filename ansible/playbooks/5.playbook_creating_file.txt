@@ -1,0 +1,25 @@
+---
+ - hosts: devops
+   become: yes
+   tasks:
+   - name: create directory
+     file: name=kohli state=directory
+   - name: create file
+     file: name=test.txt state=touch
+
+
+
+
+
+
+
+
+[go remote machine and check there....]
+# ls
+# pwd
+# cd /home/
+# ls
+# cd user (which is u created user-name in remote machine's)
+# ls
+# pwd
+# ls

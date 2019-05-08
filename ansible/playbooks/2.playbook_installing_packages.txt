@@ -1,0 +1,29 @@
+---
+ - hosts: devops
+   become: yes
+   tasks:
+   - name: update the apt repository
+     apt: update_cache=yes
+   - name: Install git packages
+     apt: name=git state=latest
+   - name: install apache
+     apt: name=apache2 state=removed
+   - name: Install tomcat packages
+     apt: name=tomcat state=installed
+
+
+
+
+state=latest (it will install latest version)
+     =removed (it will remove the packages)
+     =installed (it will also install the packages) 
+
+*every software we have 4state's
+state=present
+     =abscent
+     =installed
+     =removed 
+
+
+root    ALL=(ALL:ALL) ALL
+user    ALL=(ALL:ALL) NOPASSWD:ALL
