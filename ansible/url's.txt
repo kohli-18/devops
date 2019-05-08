@@ -1,0 +1,10 @@
+1)Example's Modules:
+
+https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+====================================================================================
+2)copy – Copies files to remote locations :
+
+https://docs.ansible.com/ansible/latest/modules/copy_module.html
+====================================================================================
+3) How to copy file's and Directories in ansible using copy and fetch modules.
+http://www.mydailytutorials.com/how-to-copy-files-and-directories-in-ansible-using-copy-and-fetch-modules/
