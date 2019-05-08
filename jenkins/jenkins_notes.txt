@@ -1,0 +1,105 @@
+1. Jenkins run on port :8080 
+Java
+3rd packages 
+
+
+Jenkins-jobs (gruvy)
+Staging
+Pre-production
+Production
+#topics:-
+1) Job pipeline
+2)slave (node) Machines
+3) creating roles
+4)Build code
+5) Upload artefacts
+===========
+
+ Manage Jenkins
+
+1) configur system
+   we configur servers
+eg: GIT HUb, SonarQubes etc
+
+
+code
+----
+
+src/main/java= java.class .jar
+
+src/main/test= test.class .jar
+
+src/main/servelets + jsps = webapp.clasee  .war =artidacts= nexis ( artifact uploader)
+
+
+Job
+
+Source code checkout
+
+
+
+
+STEPS TO INSTALL JENKINS IN UBUNTU:-
+
+#sudo apt-get install openjdk-8-jdk
+#wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+#echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+#sudo apt-get update
+#sudo apt-get install jenkins
+#sudo systemctl status jenkins
+#sudo cat /var/lib/jenkins/secrets/initialAdminPasswor (we have to copy the public IP and in new tab PASTE wit :8080 port== 162.58.3.9:8080)
+#cd /etc/
+#ls
+#cd default
+#ls
+#sudo vi jenkins (in this file we have to find "http port no" we need to change 8080 to 8090)
+#sudo cd
+#sudo systemctl restart jenkins
+# sudo apt-get install tomcat8 tomcat8-admin tomcat8-examples tomcat8-docs
+#sudo systemctl  start tomcat8
+#/etc/tomcat8
+#ls
+#sudo vi server.xml (if we want to change port number.... we will go through this command)
+# sudo vi tomcat-users.xml (adding user in tomcat-server[manager-weapps])
+#sudo systemctl restart tomcat8
+
+====================================================================================================================================
+===========================================***********************************======================================================
+
+JVM= it runs the java bitecode (Java Virtual machine)
+JDK= It is a java kit JRE is runtime env ( Java Development Kit)
+
+#sudo apt-get install tomcat8 tomcat8-docs tomcat8-examples tomcat8-admin
+*server.xml=port-number changing options
+*tomcat-users.xml=creating users
+
+#<user username="mahesh" password="44116600" roles="manager-gui, manager-script, manager-status, admin-gui"/>
+
+
+
+
+Node or Slave Machines
+
+we will control slave machines for the master jenkins only
+
+#vi /etc/ssh/sshd_config
+# systemctl restar sshd
+# vi /etc/sudoers 
+#chmod 770 /etc/sudoers
+#vi /etc/sudoers
+#chmod 440 /etc/sudoers
+
+
+pom.xml=maven (pre-defind artifacts)
+build.xml=ant (manual-defind artifacts)
+
+
+
+in Maven steps:
+1 validate
+2 complie
+3 test
+4 package
+
+===============
+jenkins- mahesh > 44116600
